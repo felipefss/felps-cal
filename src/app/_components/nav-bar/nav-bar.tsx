@@ -1,4 +1,4 @@
-import { Avatar, Flex, Grid, Separator } from '@radix-ui/themes';
+import { Avatar, Grid, Separator } from '@radix-ui/themes';
 
 export function NavBar() {
   return (
@@ -9,7 +9,7 @@ export function NavBar() {
 
       <Separator size="4" />
 
-      <Flex className="h-fill" direction="column" justify="between">
+      <Grid className="h-fill" rows="1fr auto">
         <ul className="p-6">
           <li>Event Types</li>
           <li>Scheduled Events</li>
@@ -18,7 +18,7 @@ export function NavBar() {
         </ul>
 
         <div className="p-6 pb-8">Log off</div>
-      </Flex>
+      </Grid>
     </nav>
   );
 }
