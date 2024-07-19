@@ -1,7 +1,6 @@
 import { Avatar, Flex, Grid, Separator } from '@radix-ui/themes';
 
 export function NavBar() {
-  //fixed h-full w-60
   return (
     <nav className="border-r-2 flex flex-col">
       <header className="p-6 text-center">
