@@ -1,10 +1,10 @@
-import { Button } from "@radix-ui/themes";
-import { Concert_One } from "next/font/google";
-import { GoogleLogo } from "@phosphor-icons/react/dist/ssr";
+import { Button } from '@radix-ui/themes';
+import { Concert_One } from 'next/font/google';
+import { GoogleLogo } from '@phosphor-icons/react/dist/ssr';
 
 const rubik = Concert_One({
-  subsets: ["latin"],
-  weight: "400",
+  subsets: ['latin'],
+  weight: '400',
 });
 
 export default async function LoginPage() {
