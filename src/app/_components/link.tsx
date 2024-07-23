@@ -13,7 +13,7 @@ export function Link({ href, children }: Props) {
       variant="ghost"
       asChild={true}
       size="3"
-      color="sky"
+      color="gray"
       style={{ width: '100%' }}
     >
       <NextLink href={href}>{children}</NextLink>

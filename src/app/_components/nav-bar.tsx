@@ -1,10 +1,11 @@
-import { Avatar, Separator, Text } from '@radix-ui/themes';
+import { Avatar, Button, Separator, Text } from '@radix-ui/themes';
 import { Link } from './link';
+import { SignOut } from '@phosphor-icons/react/dist/ssr';
 
 export function NavBar() {
   return (
     <nav className="flex flex-col border-r-2 bg-slate-100">
-      <header className="grid justify-center gap-3 p-6 pb-4 pt-4 text-center">
+      <header className="grid justify-center gap-3 px-6 py-4 text-center">
         <Avatar fallback="JD" size="7" />
         <Text as="span">John Doe</Text>
       </header>
@@ -27,7 +28,17 @@ export function NavBar() {
           </li>
         </ul>
 
-        <div className="p-6 pb-8">Log off</div>
+        <div className="px-6 py-4">
+          <Button
+            className="hover:cursor-pointer"
+            style={{ width: '100%' }}
+            variant="outline"
+            color="ruby"
+          >
+            Log Out
+            <SignOut size="22" />
+          </Button>
+        </div>
       </section>
     </nav>
   );
