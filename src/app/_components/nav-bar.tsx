@@ -1,6 +1,6 @@
 import { Avatar, Button, Separator, Text } from '@radix-ui/themes';
-import { Link } from './link';
 import { SignOut } from '@phosphor-icons/react/dist/ssr';
+import { NavItems } from './nav-items';
 
 export function NavBar() {
   return (
@@ -14,18 +14,7 @@ export function NavBar() {
 
       <section className="grid h-fill grid-rows-[1fr_auto]">
         <ul className="flex flex-col gap-4 p-6 text-center">
-          <li>
-            <Link href="#">Event Types</Link>
-          </li>
-          <li>
-            <Link href="#">Scheduled Events</Link>
-          </li>
-          <li>
-            <Link href="#">Availability</Link>
-          </li>
-          <li>
-            <Link href="#">Settings</Link>
-          </li>
+          <NavItems />
         </ul>
 
         <div className="px-6 py-4">
