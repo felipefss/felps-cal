@@ -13,15 +13,17 @@ export const metadata: Metadata = {
 };
 
 export default function RootLayout({
-  children,
+  main,
+  login,
 }: Readonly<{
-  children: React.ReactNode;
+  main: React.ReactNode;
+  login: React.ReactNode;
 }>) {
   return (
     <html lang="en">
       <body className={inter.className}>
         <Theme accentColor="indigo" grayColor="auto" radius="medium">
-          {children}
+          {main}
         </Theme>
       </body>
     </html>
