@@ -4,12 +4,14 @@ import NextLink from 'next/link';
 
 interface Props {
   href: string;
+  className?: string;
   children: ReactNode;
 }
 
-export function Link({ href, children }: Props) {
+export function Link({ href, children, className }: Props) {
   return (
     <Button
+      className={className}
       variant="ghost"
       asChild={true}
       size="3"

@@ -1,23 +1,43 @@
 'use client';
 
+import { usePathname, useSelectedLayoutSegment } from 'next/navigation';
 import { Link } from './link';
 
+const navItems = [
+  {
+    name: 'Event Types',
+    href: '/event-types',
+  },
+  {
+    name: 'Scheduled Events',
+    href: '/scheduled-events',
+  },
+  {
+    name: 'Availability',
+    href: '/availability',
+  },
+  {
+    name: 'Settings',
+    href: '/settings',
+  },
+];
+
+const activeClass = 'bg-[--accent-a6]';
+
 export function NavItems() {
-  // This one is a client component, because it will need to keep state of the current page
+  const segment = useSelectedLayoutSegment();
   return (
     <>
-      <li>
-        <Link href="#">Event Types</Link>
-      </li>
-      <li>
-        <Link href="#">Scheduled Events</Link>
-      </li>
-      <li>
-        <Link href="#">Availability</Link>
-      </li>
-      <li>
-        <Link href="#">Settings</Link>
-      </li>
+      {navItems.map(({ href, name }) => {
+        const isActive = !!segment && href.includes(segment);
+        return (
+          <li key={href}>
+            <Link className={isActive ? activeClass : undefined} href={href}>
+              {name}
+            </Link>
+          </li>
+        );
+      })}
     </>
   );
 }

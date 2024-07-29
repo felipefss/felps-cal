@@ -1,10 +1,7 @@
 import { redirect } from 'next/navigation';
 
 export default function Home() {
-  // TODO: use redirect to /login if not logged in
-  // if (true) {
-  //   redirect('/login');
-  // }
+  // redirect('/event-types');
 
   return (
     <main className="">
