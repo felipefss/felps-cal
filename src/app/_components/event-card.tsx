@@ -1,5 +1,6 @@
-import { CopyIcon, DotsVerticalIcon } from '@radix-ui/react-icons';
-import { Card, Text, Heading, IconButton, Link } from '@radix-ui/themes';
+import { CopyIcon } from '@radix-ui/react-icons';
+import { Card, Text, Heading, Link } from '@radix-ui/themes';
+import { EventCardOptions } from './event-card-options';
 
 export function EventCard() {
   return (
@@ -15,13 +16,7 @@ export function EventCard() {
             </Text>
           </div>
 
-          <IconButton
-            variant="ghost"
-            className="hover:cursor-pointer"
-            color="gray"
-          >
-            <DotsVerticalIcon color="black" />
-          </IconButton>
+          <EventCardOptions />
         </header>
 
         <footer>

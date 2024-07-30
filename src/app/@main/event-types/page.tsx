@@ -6,7 +6,7 @@ export default function EventTypes() {
     <main className="w-full px-16 py-10">
       <Heading>Event Types</Heading>
 
-      <Button className="mt-11" type="button">
+      <Button className="mt-11 hover:cursor-pointer" type="button">
         New Event Type
       </Button>
 
