@@ -1,4 +1,4 @@
-import { EventCard } from '@/app/_components/event-card';
+import { EventCard } from '@/app/@main/event-types/_components/event-card';
 import { Button, Heading, Separator } from '@radix-ui/themes';
 
 export default function EventTypes() {
