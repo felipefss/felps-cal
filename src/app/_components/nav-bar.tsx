@@ -4,7 +4,7 @@ import { NavItems } from './nav-items';
 
 export function NavBar() {
   return (
-    <nav className="flex flex-col border-r-2 bg-slate-100">
+    <nav className="flex min-w-48 flex-col border-r-2 bg-slate-100">
       <header className="grid justify-center gap-3 px-6 py-4 text-center">
         <Avatar fallback="JD" size="7" />
         <Text as="span">John Doe</Text>
