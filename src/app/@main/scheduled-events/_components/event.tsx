@@ -1,5 +1,6 @@
 import { Button, Popover, Table } from '@radix-ui/themes';
 import { QuestionsPopover } from './questions-popover';
+import { ActionsDropdown } from './actions-dropdown';
 
 export function Event() {
   return (
@@ -25,7 +26,7 @@ export function Event() {
         </a>
       </Table.Cell>
       <Table.Cell justify="start" className="align-middle">
-        Actions
+        <ActionsDropdown />
       </Table.Cell>
     </Table.Row>
   );

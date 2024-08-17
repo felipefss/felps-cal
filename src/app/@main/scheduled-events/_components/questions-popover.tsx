@@ -1,16 +1,12 @@
+import { ChevronDownIcon } from '@radix-ui/react-icons';
 import { Button, Heading, Popover } from '@radix-ui/themes';
 
 export function QuestionsPopover() {
   return (
     <Popover.Root>
       <Popover.Trigger>
-        <Button
-          variant="ghost"
-          color="gray"
-          highContrast={true}
-          className="hover:cursor-pointer"
-        >
-          Questions
+        <Button variant="outline" className="hover:cursor-pointer">
+          Questions <ChevronDownIcon />
         </Button>
       </Popover.Trigger>
 
