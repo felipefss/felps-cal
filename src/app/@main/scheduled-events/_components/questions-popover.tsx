@@ -15,7 +15,7 @@ export function QuestionsPopover() {
       </Popover.Trigger>
 
       <Popover.Content size="1">
-        <div className="mb-2">
+        <div className="mb-2 last:mb-0">
           <Heading size="3">Company name</Heading>
           Home
         </div>
