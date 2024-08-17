@@ -1,4 +1,5 @@
 import { Box, Card, Heading, Table, Tabs } from '@radix-ui/themes';
+import { Event } from './_components/event';
 
 export default function ScheduledEvents() {
   return (
@@ -28,32 +29,9 @@ export default function ScheduledEvents() {
                         </Table.ColumnHeaderCell>
                       </Table.Row>
                     </Table.Header>
+
                     <Table.Body>
-                      <Table.Row>
-                        <Table.Cell justify="start" className="align-middle">
-                          10:00 - 10:30
-                        </Table.Cell>
-                        <Table.Cell justify="start" className="align-middle">
-                          <p>
-                            <strong>John Doe</strong>
-                          </p>
-                          <sub>jonh.doe@example.com</sub>
-                        </Table.Cell>
-                        <Table.Cell justify="start" className="align-middle">
-                          Event Name
-                        </Table.Cell>
-                        <Table.Cell justify="start" className="align-middle">
-                          Questions
-                        </Table.Cell>
-                        <Table.Cell justify="start" className="align-middle">
-                          <a href="#" className="text-blue-600">
-                            Meeting Link
-                          </a>
-                        </Table.Cell>
-                        <Table.Cell justify="start" className="align-middle">
-                          Actions
-                        </Table.Cell>
-                      </Table.Row>
+                      <Event />
                     </Table.Body>
                   </Table.Root>
                 </section>
@@ -67,5 +45,3 @@ export default function ScheduledEvents() {
     </main>
   );
 }
-
-// Time | Attendee (hover for email address) | Questions | Link | dropdown options (reschedule, cancel)
