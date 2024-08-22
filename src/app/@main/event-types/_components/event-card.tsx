@@ -1,6 +1,6 @@
 import { CopyIcon } from '@radix-ui/react-icons';
 import { Card, Text, Heading, Link } from '@radix-ui/themes';
-import { EventCardOptions } from './event-card-options';
+import { OptionsMenu } from './options-menu';
 
 export function EventCard() {
   return (
@@ -16,7 +16,7 @@ export function EventCard() {
             </Text>
           </div>
 
-          <EventCardOptions />
+          <OptionsMenu />
         </header>
 
         <footer>

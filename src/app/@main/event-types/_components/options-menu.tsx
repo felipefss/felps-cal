@@ -2,7 +2,7 @@ import { DropdownMenu } from '@radix-ui/themes';
 import { DotsVerticalIcon } from '@radix-ui/react-icons';
 import { IconButton } from '@radix-ui/themes';
 
-export function EventCardOptions() {
+export function OptionsMenu() {
   return (
     <DropdownMenu.Root>
       <DropdownMenu.Trigger>
@@ -16,8 +16,12 @@ export function EventCardOptions() {
       </DropdownMenu.Trigger>
 
       <DropdownMenu.Content>
-        <DropdownMenu.Item>Edit</DropdownMenu.Item>
-        <DropdownMenu.Item>Delete</DropdownMenu.Item>
+        <DropdownMenu.Item className="hover:cursor-pointer">
+          Edit
+        </DropdownMenu.Item>
+        <DropdownMenu.Item className="hover:cursor-pointer">
+          Delete
+        </DropdownMenu.Item>
       </DropdownMenu.Content>
     </DropdownMenu.Root>
   );
