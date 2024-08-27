@@ -15,6 +15,7 @@ export function ActionsDropdown() {
           Reschedule
         </DropdownMenu.Item>
         <DropdownMenu.Item className="hover:cursor-pointer">
+          {/* Don't display in Past events */}
           Cancel
         </DropdownMenu.Item>
       </DropdownMenu.Content>
