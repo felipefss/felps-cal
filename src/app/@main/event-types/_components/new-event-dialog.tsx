@@ -1,31 +1,21 @@
-'use client';
-
 import {
   Button,
   Dialog,
   Flex,
   Grid,
-  Select,
   Text,
   TextArea,
   TextField,
 } from '@radix-ui/themes';
-import { ReactNode, useState } from 'react';
+import { ReactNode } from 'react';
 import { InviteeQuestions } from './invitee-questions';
+import { Duration } from './duration';
 
 type Props = {
   children: ReactNode;
 };
 
-type Duration = '15' | '30' | '45' | '60' | 'custom';
-
 export function NewEventDialog({ children }: Props) {
-  const [duration, setDuration] = useState<Duration>('30');
-
-  const handleDurationChange = (value: string) => {
-    setDuration(value as Duration);
-  };
-
   return (
     <Dialog.Root>
       <Dialog.Trigger>{children}</Dialog.Trigger>
@@ -43,32 +33,11 @@ export function NewEventDialog({ children }: Props) {
             </label>
 
             <label>
-              {/* TODO: convert "Duration" into its own component (after useing a 'form manager') */}
               <Text as="div" size="2" mb="1" weight="bold">
                 Duration
               </Text>
-              <Select.Root
-                value={duration}
-                onValueChange={handleDurationChange}
-              >
-                <Select.Trigger />
-                <Select.Content>
-                  <Select.Item value="15">15 minutes</Select.Item>
-                  <Select.Item value="30">30 minutes</Select.Item>
-                  <Select.Item value="45">45 minutes</Select.Item>
-                  <Select.Item value="60">1 hour</Select.Item>
-                  <Select.Item value="custom">Custom</Select.Item>
-                </Select.Content>
-              </Select.Root>
 
-              {duration === 'custom' && (
-                <Flex gap="2" mt="2" align="center">
-                  <TextField.Root className="w-[5.5rem]" />
-                  <Text as="div" size="2">
-                    mins
-                  </Text>
-                </Flex>
-              )}
+              <Duration />
             </label>
 
             <label>
