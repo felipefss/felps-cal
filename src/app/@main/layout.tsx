@@ -5,7 +5,8 @@ export default function MainLayout({ children }: { children: ReactNode }) {
   return (
     <div className="flex h-dvh">
       <NavBar />
-      {children}
+
+      <main className="w-full px-16 py-10">{children}</main>
     </div>
   );
 }

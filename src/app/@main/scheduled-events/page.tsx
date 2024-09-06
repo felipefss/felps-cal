@@ -3,7 +3,7 @@ import { Event } from './_components/event';
 
 export default function ScheduledEvents() {
   return (
-    <main className="w-full px-16 py-10">
+    <>
       <Heading>Scheduled Events</Heading>
 
       <section className="mt-24">
@@ -42,6 +42,6 @@ export default function ScheduledEvents() {
           </Tabs.Root>
         </Card>
       </section>
-    </main>
+    </>
   );
 }

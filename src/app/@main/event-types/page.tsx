@@ -4,7 +4,7 @@ import { NewEventDialog } from './_components/new-event-dialog';
 
 export default function EventTypes() {
   return (
-    <main className="w-full px-16 py-10">
+    <>
       <Heading>Event Types</Heading>
 
       <NewEventDialog>
@@ -20,6 +20,6 @@ export default function EventTypes() {
           <EventCard key={i} />
         ))}
       </section>
-    </main>
+    </>
   );
 }
