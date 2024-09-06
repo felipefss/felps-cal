@@ -14,7 +14,7 @@ import { Trash } from '@phosphor-icons/react';
 
 const initialQuestions = [
   {
-    id: 1,
+    id: 1, // TODO: remove this id. It can mess the deletion of questions
     question: 'Please share anything that will help prepare for our meeting',
   },
 ];
@@ -32,6 +32,12 @@ export function InviteeQuestions() {
     ]);
   };
 
+  const handleChangeQuestion = (id: number, value: string) => {
+    setQuestions((prev) =>
+      prev.map((q) => (q.id === id ? { ...q, question: value } : q)),
+    );
+  };
+
   const handleDeleteQuestion = (id: number) => {
     setQuestions((prev) => prev.filter((q) => q.id !== id));
   };
@@ -42,16 +48,18 @@ export function InviteeQuestions() {
         Invitee questions
       </Text>
 
-      {questions.map(({ id, question }, index) => (
+      {questions.map(({ id, question }) => (
         <Box key={id}>
           <Text size="2" as="label">
-            Question {index + 1}
+            Question {id}
           </Text>
           <Flex gap="2">
             <TextArea
               className="flex-1"
               value={question}
+              onChange={(e) => handleChangeQuestion(id, e.target.value)}
               placeholder="Type your question"
+              name={`question${id}`}
             />
 
             <IconButton

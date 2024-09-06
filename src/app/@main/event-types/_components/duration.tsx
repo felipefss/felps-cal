@@ -41,7 +41,7 @@ export function Duration() {
             className="w-12"
             value={customDuration}
             onChange={handleCustomDurationChange}
-            name="custom-duration"
+            name="duration"
           />
           <Text as="span" size="2">
             mins
