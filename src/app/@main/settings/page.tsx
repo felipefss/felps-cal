@@ -1,23 +1,33 @@
+'use client';
+
 import {
   Avatar,
   Button,
   Flex,
   Grid,
   Heading,
+  Select,
   Separator,
   Text,
   TextArea,
   TextField,
 } from '@radix-ui/themes';
+import { allTimezones, useTimezoneSelect } from 'react-timezone-select';
+import { saveSettings } from './settings-actions';
 
 export default function Settings() {
+  const { options } = useTimezoneSelect({
+    labelStyle: 'altName',
+    timezones: allTimezones,
+  });
+
   return (
     <>
       <Heading>Settings</Heading>
 
       <Separator size="4" className="my-4 mt-[5.75rem]" />
 
-      <section className="md:max-w-xl">
+      <form action={saveSettings} className="md:max-w-xl">
         <Grid gap="4">
           <Flex gap="2" align="center" direction="column">
             <Avatar fallback="JD" size="7" />
@@ -41,20 +51,20 @@ export default function Settings() {
             <TextField.Root
               name="email"
               disabled={true}
-              value="john.doe@example.com"
+              defaultValue="john.doe@example.com"
             />
           </label>
 
           <label>
             <Text as="div" mb="1" weight="bold">
-              Link prefix
+              Calendars URL prefix
             </Text>
             <TextField.Root
               name="link"
               placeholder="Choose a URL prefix"
-              value="john-doe"
+              defaultValue="john-doe"
             >
-              <TextField.Slot className="mr-2 rounded-l bg-slate-200">
+              <TextField.Slot className="mr-2 w-6 justify-center rounded-l bg-slate-200">
                 /
               </TextField.Slot>
             </TextField.Root>
@@ -75,23 +85,26 @@ export default function Settings() {
             <Text as="div" mb="1" weight="bold">
               Timezone
             </Text>
-            <TextField.Root name="timezone" />
+            <Select.Root
+              name="timezone"
+              defaultValue={Intl.DateTimeFormat().resolvedOptions().timeZone}
+            >
+              <Select.Trigger className="w-full" />
+              <Select.Content>
+                {options.map(({ label, value }) => (
+                  <Select.Item key={value} value={value}>
+                    {label}
+                  </Select.Item>
+                ))}
+              </Select.Content>
+            </Select.Root>
           </label>
         </Grid>
 
-        <Button className="mt-4">Save changes</Button>
-      </section>
+        <Button type="submit" className="mt-4 hover:cursor-pointer">
+          Save changes
+        </Button>
+      </form>
     </>
   );
 }
-
-/**
- * name
- * email - readonly
- * link
- * welcome message
- * Country (maybe not needed)
- * time zone
- * avatar
- *
- */
