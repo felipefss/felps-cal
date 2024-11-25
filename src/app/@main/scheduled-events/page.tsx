@@ -37,7 +37,9 @@ export default function ScheduledEvents() {
                 </section>
               </Tabs.Content>
 
-              <Tabs.Content value="past">Past</Tabs.Content>
+              <Tabs.Content value="past">
+                Same component as Upcoming, but without the "actions" button
+              </Tabs.Content>
             </Box>
           </Tabs.Root>
         </Card>

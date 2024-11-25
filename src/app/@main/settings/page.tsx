@@ -13,7 +13,7 @@ import {
   TextField,
 } from '@radix-ui/themes';
 import { allTimezones, useTimezoneSelect } from 'react-timezone-select';
-import { saveSettings } from './settings-actions';
+import { saveSettings } from './action';
 
 export default function Settings() {
   const { options } = useTimezoneSelect({

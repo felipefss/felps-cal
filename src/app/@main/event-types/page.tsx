@@ -13,6 +13,7 @@ export default function EventTypes() {
         </Button>
       </NewEventDialog>
 
+      {/* TODO: remove this separator from all pages */}
       <Separator size="4" className="my-4" />
 
       <section className="grid gap-4 lg:grid-cols-3">
